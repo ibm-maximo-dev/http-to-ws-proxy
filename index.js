@@ -2,14 +2,13 @@ const express = require("express");
 var bodyParser = require("body-parser");
 const app = express();
 const WebSocket = require("ws");
-
-//create the websocket server
-const wss = new WebSocket.Server({ port: 8081 });
+const http = require("http");
 
 app.use(bodyParser.json());
 
+const server = http.createServer(app);
+
 app.post("/*", (req, res) => {
-  console.log(req.body);
   //res.send(req.body);
   //broadcast message over websocket
   wss.clients.forEach(client => {
@@ -24,5 +23,12 @@ app.post("/*", (req, res) => {
   res.end();
 });
 
+//create the websocket server
+const wss = new WebSocket.Server({ server });
+
+let port = process.env.PORT || 8080;
+
 //create the
-app.listen(8082, () => console.log("http to websocket running on port 8082!"));
+server.listen(port, () =>
+  console.log(`http to websocket running on port ${port}!`)
+);
