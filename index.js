@@ -26,6 +26,14 @@ app.post("/*", (req, res) => {
 //create the websocket server
 const wss = new WebSocket.Server({ server });
 
+wss.on('connection', function connection(ws) {
+  ws.on('message', function incoming(message) {
+    if(message === "ping"){
+      ws.send("pong")
+    }
+  });
+});
+
 let port = process.env.PORT || 8080;
 
 //create the
