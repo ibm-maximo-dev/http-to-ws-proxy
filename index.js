@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2018-present, IBM CORP.
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ * 
+ * Initial Contribution: Alex Nguyen <nguyenal@us.ibm.com>
+ */
+
 const express = require("express");
 var bodyParser = require("body-parser");
 const app = express();
