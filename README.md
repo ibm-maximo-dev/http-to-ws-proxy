@@ -7,7 +7,7 @@ The IoT adapter does not support a native WebSocket connection. However, an HTTP
 To complete an automatic setup of the WebSocket proxy, complete the following steps: 
 1. Click the following button to provision your own instance of this proxy to IBM Cloud:
 
-    [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://github.com/ibm-maximo-dev/http-to-ws-proxy)
+    [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/ibm-maximo-dev/http-to-ws-proxy)
 
 2. After selecting Deploy to IBM Cloud, select deploy, and the default toolchain for IBM Cloud is set up. 
 3. After set up completes, select `Delivery Pipeline` and then select the play button on the `Build Stage` card. A build and deploy is initialized, which will result in a URL. This URL is to your provisioned proxy.
